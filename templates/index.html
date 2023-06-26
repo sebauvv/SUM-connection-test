@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SUM</title>
+    <!--link rel="stylesheet" href="style.css"-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/eb8d74c79b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <header class="header_upper">
+        <div class="logo">
+            <img src="https://sum.unmsm.edu.pe/alumnoWebSum/assets/img/logo.png"/>
+            <i href="#" class="fa fa-bars" style="color: aliceblue;"></i>
+            
+        </div>
+        <nav>
+            <a>Tiempo</a>
+            <a>Nombre</a>
+            <i href="#" class="fa fa-power-off" style="color: aliceblue;"></i>
+            <a>Salir</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar">
+        <header>
+            <span class="userName">
+                <a>Bienvenido</a> <br>
+                <a>NOMBRE</a>
+            </span>
+            <span class="status">
+                <a><i class="fa fa-circle" style="color: rgb(47, 255, 57)"></i></a>
+                <a>En linea</a>
+            </span>                
+        </header>
+        <ul class="list">
+            <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
+            <li><a href="#"><i class="fa fa-folder-open"></i> Mi información</a></li>
+            <li><a href="#"><i class="fa fa-edit"></i> Matrícula</a></li>
+            <li><a href="#"><i class="fa fa-file"></i> Reportes</a></li>
+            <li><a href="#"><i class="fa fa-clock-o"></i> Asistencia</a></li>
+            <li><a href="#"><i class="fa fa-file-text"></i> Mi Tutoría</a></li>
+            <li><a href="#"><i class="fa fa-book"></i> Plan de Estudio</a></li>
+            <li><a href="#"><i class="fa fa-book"></i> Manuales</a></li>
+            <li><a href="#"><i class="fa fa-power-off"></i> Salir</a></li>
+        </ul>
+    </aside>
+
+    <section>
+        
+        <div class="assistBox">
+            
+            <!-- {% for nombres in student_data %}
+                <p> {{ nombres[0] }} {{nombres[1]}} {{nombres[2]}}</p>
+            {% endfor %} -->
+            <!--  <p>{{ student_data }}</p> -->
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">#</th>-->
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for nombres in student_data %}
+                    <tr>
+                        <th scope="row"> {{nombres[0]}} </th>
+                        <th>{{nombres[1]}}</th>
+                        <th>{{nombres[2]}}</th>
+                        
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
